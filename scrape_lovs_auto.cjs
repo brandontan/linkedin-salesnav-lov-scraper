@@ -1,7 +1,5 @@
 const fs = require('fs');
-const puppeteer = require('puppeteer-extra');
-const StealthPlugin = require('puppeteer-extra-plugin-stealth');
-puppeteer.use(StealthPlugin());
+const puppeteer = require('puppeteer');
 
 const LI_AT = 'PASTE_YOUR_li_at_HERE';
 const SALES_NAV_URL = 'https://www.linkedin.com/sales/search/people';
@@ -11,7 +9,6 @@ const SALES_NAV_URL = 'https://www.linkedin.com/sales/search/people';
   try {
     browser = await puppeteer.launch({
       headless: 'new',
-      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
