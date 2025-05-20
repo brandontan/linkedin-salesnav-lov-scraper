@@ -1,7 +1,8 @@
 const fs = require('fs');
-const puppeteer = require('puppeteer-extra');
+const puppeteer = require('puppeteer');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
-puppeteer.use(StealthPlugin);
+const puppeteerExtra = require('puppeteer-extra');
+puppeteerExtra.use(StealthPlugin());
 
 const LI_AT = 'PASTE_YOUR_li_at_HERE';
 const SALES_NAV_URL = 'https://www.linkedin.com/sales/search/people';
@@ -9,18 +10,23 @@ const SALES_NAV_URL = 'https://www.linkedin.com/sales/search/people';
 (async () => {
   let browser;
   try {
-    browser = await puppeteer.launch({
-      headless: 'new',
+    browser = await puppeteerExtra.launch({
+      headless: true,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
         '--disable-dev-shm-usage',
         '--disable-accelerated-2d-canvas',
         '--disable-gpu',
-        '--window-size=1920x1080'
-      ]
+        '--no-first-run',
+        '--no-zygote',
+        '--single-process',
+        '--disable-extensions'
+      ],
+      ignoreHTTPSErrors: true
     });
     const page = await browser.newPage();
+    await page.setViewport({ width: 1280, height: 800 });
 
     await page.setCookie({
       name: 'li_at',
