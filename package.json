@@ -1,1 +1,11 @@
-{\n  "name": "linkedin-salesnav-lov-scraper",\n  "version": "1.0.0",\n  "main": "scrape_lovs_auto.js",\n  "type": "module",\n  "dependencies": {\n    "puppeteer": "^21.11.0",\n    "puppeteer-extra": "^3.3.6",\n    "puppeteer-extra-plugin-stealth": "^2.11.2"\n  }\n}
+{
+  "name": "linkedin-salesnav-lov-scraper",
+  "version": "1.0.0",
+  "main": "scrape_lovs_auto.js",
+  "type": "module",
+  "dependencies": {
+    "puppeteer": "^21.11.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}
