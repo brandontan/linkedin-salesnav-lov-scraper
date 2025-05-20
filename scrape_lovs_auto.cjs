@@ -11,7 +11,7 @@ const SALES_NAV_URL = 'https://www.linkedin.com/sales/search/people';
   let browser;
   try {
     browser = await puppeteerExtra.launch({
-      headless: true,
+      headless: 'new',
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
