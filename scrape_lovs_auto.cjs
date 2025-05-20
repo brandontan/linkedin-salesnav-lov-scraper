@@ -1,8 +1,7 @@
 const fs = require('fs');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
-const puppeteerExtra = require('puppeteer-extra');
-puppeteerExtra.use(StealthPlugin());
+puppeteer.use(StealthPlugin());
 
 const LI_AT = 'PASTE_YOUR_li_at_HERE';
 const SALES_NAV_URL = 'https://www.linkedin.com/sales/search/people';
@@ -10,7 +9,7 @@ const SALES_NAV_URL = 'https://www.linkedin.com/sales/search/people';
 (async () => {
   let browser;
   try {
-    browser = await puppeteerExtra.launch({
+    browser = await puppeteer.launch({
       headless: 'new',
       args: [
         '--no-sandbox',
