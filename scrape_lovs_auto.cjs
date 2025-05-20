@@ -35,6 +35,9 @@ const SALES_NAV_URL = 'https://www.linkedin.com/sales/search/people';
 
     await page.goto(SALES_NAV_URL, { waitUntil: 'networkidle2', timeout: 30000 });
 
+    // Take a screenshot for debugging
+    await page.screenshot({ path: 'debug_linkedin.png', fullPage: true });
+
     await page.waitForSelector('button[aria-label*="Add filter"], .search-filters-bar', { timeout: 20000 });
 
     let filterLabels = await page.$$eval(
