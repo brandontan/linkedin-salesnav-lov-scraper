@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-05-21T03:07:43.084Z",
+  "summary": {
+    "total": 3,
+    "passed": 1,
+    "failed": 2
+  },
+  "details": [
+    {
+      "name": "Unit Tests",
+      "status": "failed",
+      "description": "Testing individual components",
+      "error": "Command failed: npm test"
+    },
+    {
+      "name": "Integration Tests",
+      "status": "failed",
+      "description": "Testing component interactions",
+      "error": "Command failed: npm test -- src/tests/integration.test.js"
+    },
+    {
+      "name": "Puppeteer Tests",
+      "status": "passed",
+      "description": "Testing browser automation"
+    }
+  ]
+}
